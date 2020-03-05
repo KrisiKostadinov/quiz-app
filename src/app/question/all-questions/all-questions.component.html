@@ -1,13 +1,13 @@
 <h2 class="text-center">Всички въпроси</h2>
 <mat-spinner *ngIf="!questions" class="mx-auto"></mat-spinner>
 <ul class="scrollbar scrollbar-primary">
-    <li class="bg-primary p-2 my-2 shadow rounded" *ngFor="let question of questions">
+    <li class="bg-primary p-2 my-2 shadow rounded" *ngFor="let question of questions; let i = index">
         <h2 class="text-light">{{ question.title }}</h2>
         <p *ngFor="let answer of question.answers" class="mx-2 text-light">
             {{ answer }}
         </p>
         <div class="d-flex justify-content-end">
-            <button mat-button color="accent" (click)="edit()">Редактирай</button>
+            <button mat-button color="accent" (click)="edit(i)">Редактирай</button>
             <button mat-button color="warn" (click)="dismiss()">Изтрии</button>
         </div>
     </li>

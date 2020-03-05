@@ -21,4 +21,7 @@ export class QuestionService {
     return this.questions.valueChanges({ idField: "id" });
   }
 
+  edit(question: Question) {
+    return this.questions.doc(question.id).set(question, { merge: true });
+  }
 }

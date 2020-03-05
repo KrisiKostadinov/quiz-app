@@ -47,7 +47,6 @@ export class AddQuestionComponent implements OnInit {
   }
 
   all(): void {
-    console.log(0);
     this.dialog.open(AllQuestionsComponent, {
       width: '400px',
       backdropClass: 'bg-primary',
@@ -58,5 +57,4 @@ export class AddQuestionComponent implements OnInit {
   closeWindow(): void {
     this.dialogRef.close();
   }
-
 }

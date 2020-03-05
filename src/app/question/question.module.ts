@@ -9,13 +9,15 @@ import { QuestionService } from './services/question.service';
 import { ToastrModule } from 'ngx-toastr';
 import { AllQuestionsComponent } from './all-questions/all-questions.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { EditQuestionComponent } from './edit-question/edit-question.component';
 
 
 
 @NgModule({
   declarations: [
     AddQuestionComponent,
-    AllQuestionsComponent
+    AllQuestionsComponent,
+    EditQuestionComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +33,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
   ],
   entryComponents: [
     AddQuestionComponent,
-    AllQuestionsComponent
+    AllQuestionsComponent,
+    EditQuestionComponent
   ]
 })
 export class QuestionModule { }

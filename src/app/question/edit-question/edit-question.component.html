@@ -1,0 +1,15 @@
+<h2 class="text-center text-warning">{{ data.question.title }}</h2>
+<form [formGroup]="addForm">
+    <mat-form-field class="w-100">
+      <mat-label>Въпрос</mat-label>
+      <input matInput formControlName="title" color="accent" placeholder="Тук въведете самия въпрос">
+    </mat-form-field>
+    <mat-form-field class="w-100">
+      <mat-label>Отговори</mat-label>
+      <input matInput formControlName="answers" placeholder="Тук въведете всички отговори разделени с запетая">
+    </mat-form-field>
+    <div class="d-flex justify-content-between">
+        <button mat-raised-button color="accent" [disabled]="addForm.invalid || isSubmitted" (click)="edit()">Редактирай</button>
+        <button mat-button color="warn" (click)="closeWindow()">Отмени</button>
+    </div>
+</form>
