@@ -1,0 +1,14 @@
+<nav class="bg-primary p-4">
+    <div class="container d-flex justify-content-between align-content-center">
+      <h2 class="text-light">{{ title }}</h2>
+      <ul class="d-flex m-0 justify-content-center align-items-center">
+        <li *ngIf="auth.user$ | async as user; else login">
+          <button (click)="auth.signOut()" class="btn btn-outline-light mx-4">Изход</button>
+          <span class="text-light">{{ user.displayName }}</span>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <ng-template #login>
+    <button (click)="auth.googleSignin()" class="btn btn-outline-light">Вход</button>
+</ng-template>

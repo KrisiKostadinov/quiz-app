@@ -7,10 +7,5 @@ import { AuthService } from './test/services/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'QuizApp';
-
-  constructor(public auth: AuthService) {
-
-  }
-
+  
 }
