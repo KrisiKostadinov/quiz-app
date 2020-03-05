@@ -17,4 +17,8 @@ export class QuestionService {
     return this.questions.add(question);
   }
 
+  all() {
+    return this.questions.valueChanges({ idField: "id" });
+  }
+
 }

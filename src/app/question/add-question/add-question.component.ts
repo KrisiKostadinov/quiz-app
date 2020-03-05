@@ -3,6 +3,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Question } from '../models/question.model';
 import { QuestionService } from '../services/question.service';
 import { ToastrService } from 'ngx-toastr';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { AllQuestionsComponent } from '../all-questions/all-questions.component';
 
 @Component({
   selector: 'app-add-question',
@@ -20,7 +22,9 @@ export class AddQuestionComponent implements OnInit {
 
   constructor(
     private questionService: QuestionService,
-    private toastrService: ToastrService) { }
+    private toastrService: ToastrService,
+    private dialog: MatDialog,
+    private dialogRef: MatDialogRef<any>) { }
 
   ngOnInit(): void {
   }
@@ -43,7 +47,16 @@ export class AddQuestionComponent implements OnInit {
   }
 
   all(): void {
-    
+    console.log(0);
+    this.dialog.open(AllQuestionsComponent, {
+      width: '400px',
+      backdropClass: 'bg-primary',
+      disableClose: true
+    });
   }
   
+  closeWindow(): void {
+    this.dialogRef.close();
+  }
+
 }

@@ -22,7 +22,9 @@ export class NavbarComponent implements OnInit {
 
   adminWindow(): void {
     this.dialog.open(AdminComponent, {
-      width: '400px'
+      width: '400px',
+      backdropClass: 'bg-primary',
+      disableClose: true
     });
   }
 

@@ -7,12 +7,15 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { QuestionService } from './services/question.service';
 import { ToastrModule } from 'ngx-toastr';
+import { AllQuestionsComponent } from './all-questions/all-questions.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 
 @NgModule({
   declarations: [
-    AddQuestionComponent
+    AddQuestionComponent,
+    AllQuestionsComponent
   ],
   imports: [
     CommonModule,
@@ -20,13 +23,15 @@ import { ToastrModule } from 'ngx-toastr';
     MatInputModule,
     MatSelectModule,
     MatButtonModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    MatProgressSpinnerModule
   ],
   providers: [
     QuestionService
   ],
   entryComponents: [
-    AddQuestionComponent
+    AddQuestionComponent,
+    AllQuestionsComponent
   ]
 })
 export class QuestionModule { }

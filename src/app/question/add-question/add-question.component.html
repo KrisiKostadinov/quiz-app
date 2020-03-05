@@ -10,7 +10,7 @@
   </mat-form-field>
   <div class="d-flex justify-content-between">
       <button mat-raised-button color="primary" [disabled]="addForm.invalid || isSubmitted" (click)="add()">Добави</button>
-      <button mat-raised-button color="primary">Виж всички</button>
-      <button mat-button color="warn" (click)="all()">Отмени</button>
+      <button mat-raised-button color="primary" (click)="all()">Виж всички</button>
+      <button mat-button color="warn" (click)="closeWindow()">Отмени</button>
   </div>
 </form>
