@@ -24,4 +24,9 @@ export class QuestionService {
   edit(question: Question) {
     return this.questions.doc(question.id).set(question, { merge: true });
   }
+
+  dismiss(id: string) {
+    return this.questions.doc(id).delete();
+  }
+
 }

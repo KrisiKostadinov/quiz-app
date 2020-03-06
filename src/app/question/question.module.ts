@@ -10,6 +10,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { AllQuestionsComponent } from './all-questions/all-questions.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { EditQuestionComponent } from './edit-question/edit-question.component';
+import { DismissQuestionComponent } from './dismiss-question/dismiss-question.component';
 
 
 
@@ -17,7 +18,8 @@ import { EditQuestionComponent } from './edit-question/edit-question.component';
   declarations: [
     AddQuestionComponent,
     AllQuestionsComponent,
-    EditQuestionComponent
+    EditQuestionComponent,
+    DismissQuestionComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +36,8 @@ import { EditQuestionComponent } from './edit-question/edit-question.component';
   entryComponents: [
     AddQuestionComponent,
     AllQuestionsComponent,
-    EditQuestionComponent
+    EditQuestionComponent,
+    DismissQuestionComponent
   ]
 })
 export class QuestionModule { }

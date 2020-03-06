@@ -3,6 +3,7 @@ import { QuestionService } from '../services/question.service';
 import { Question } from '../models/question.model';
 import { MatDialogRef, MatDialog } from '@angular/material/dialog';
 import { EditQuestionComponent } from '../edit-question/edit-question.component';
+import { DismissQuestionComponent } from '../dismiss-question/dismiss-question.component';
 
 @Component({
   selector: 'app-all-questions',
@@ -39,7 +40,12 @@ export class AllQuestionsComponent implements OnInit {
     });
   }
 
-  dismiss(): void {
-
+  dismiss(index: number): void {
+    this.dialog.open(DismissQuestionComponent, {
+      width: '400px',
+      data: this.questions[index],
+      disableClose: true,
+      backdropClass: 'bg-danger'
+    })
   }
 }
