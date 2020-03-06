@@ -5,6 +5,8 @@ import { QuestionService } from '../services/question.service';
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AllQuestionsComponent } from '../all-questions/all-questions.component';
+import { AddAnswerToQuestionComponent } from '../add-answer-to-question/add-answer-to-question.component';
+import { Answer } from '../models/answer.model';
 
 @Component({
   selector: 'app-add-question',
@@ -15,9 +17,10 @@ export class AddQuestionComponent implements OnInit {
 
   isSubmitted: boolean= false;
 
+  answersToQuestion: Answer[] = [];
+
   addForm = new FormGroup({
-    title: new FormControl('', [Validators.required]),
-    answers: new FormControl('', [Validators.required])
+    title: new FormControl('', [Validators.required, Validators.minLength(7)])
   });
 
   constructor(
@@ -32,10 +35,9 @@ export class AddQuestionComponent implements OnInit {
   add(): void {
     if(this.addForm.valid) {
       this.isSubmitted = true;
-      
       const question: Question = {
         title: this.addForm.value.title,
-        answers: this.addForm.value.answers.split(',')
+        answers: this.answersToQuestion
       }
       
       this.questionService.add(question).then(data => {
@@ -44,6 +46,20 @@ export class AddQuestionComponent implements OnInit {
         this.isSubmitted = false;
       });
     }
+  }
+
+  addAnswers(): void {
+    var dialogAnswer = this.dialog.open(AddAnswerToQuestionComponent, {
+      width: '700px',
+      data: this.addForm.value.title,
+      disableClose: true,
+      backdropClass: 'bg-success'
+    });
+    dialogAnswer.afterClosed().subscribe(data => {
+      if(data) {
+        this.answersToQuestion.push(data);
+      }
+    });
   }
 
   all(): void {

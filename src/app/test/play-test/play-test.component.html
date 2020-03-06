@@ -1,5 +1,5 @@
-<div class="play-test">
-    <h2 class="text-center py-4 text-light">Въпрос</h2>
+<div class="play-test" *ngIf="question">
+    <h2 class="text-center py-4 text-light">{{ question.title }}</h2>
     <h4 class="text-center text-light p-2 rounded-circle border border-light">{{ points }}</h4>
     <form class="w-25 mx-auto">
         <mat-form-field class="w-100">

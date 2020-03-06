@@ -31,7 +31,7 @@ export class AllQuestionsComponent implements OnInit {
 
   edit(index: number): void {
     this.dialog.open(EditQuestionComponent, {
-      width: '400px',
+      width: '700px',
       data: {
         question: this.questions[index]
       },

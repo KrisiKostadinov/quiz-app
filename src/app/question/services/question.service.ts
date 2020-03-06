@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Question } from '../models/question.model';
+import { Answer } from '../models/answer.model';
 
 @Injectable({
   providedIn: 'root'
@@ -28,5 +29,4 @@ export class QuestionService {
   dismiss(id: string) {
     return this.questions.doc(id).delete();
   }
-
 }

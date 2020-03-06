@@ -11,6 +11,7 @@ import { AllQuestionsComponent } from './all-questions/all-questions.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { EditQuestionComponent } from './edit-question/edit-question.component';
 import { DismissQuestionComponent } from './dismiss-question/dismiss-question.component';
+import { AddAnswerToQuestionComponent } from './add-answer-to-question/add-answer-to-question.component';
 
 
 
@@ -19,7 +20,8 @@ import { DismissQuestionComponent } from './dismiss-question/dismiss-question.co
     AddQuestionComponent,
     AllQuestionsComponent,
     EditQuestionComponent,
-    DismissQuestionComponent
+    DismissQuestionComponent,
+    AddAnswerToQuestionComponent
   ],
   imports: [
     CommonModule,
@@ -37,7 +39,8 @@ import { DismissQuestionComponent } from './dismiss-question/dismiss-question.co
     AddQuestionComponent,
     AllQuestionsComponent,
     EditQuestionComponent,
-    DismissQuestionComponent
+    DismissQuestionComponent,
+    AddAnswerToQuestionComponent
   ]
 })
 export class QuestionModule { }
